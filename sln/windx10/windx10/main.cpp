@@ -158,9 +158,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         if (done)
             break;
         if (msc == 0) {
-            // 会影响到即时操作，比如帧率显示的刷新。
             Sleep(1);
-            continue;
+            // 会影响到即时操作，比如帧率显示的刷新。
+            // continue;
         }
 
         // Start the Dear ImGui frame
