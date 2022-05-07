@@ -23,6 +23,9 @@
     <ClCompile Include="..\..\..\lib\imgui\imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\lib\ImGuiFileDialog\ImGuiFileDialog.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="imgui">
