@@ -54,7 +54,14 @@ if (NOT imgui_POPULATED)
 
     file(GLOB IMGUI_SRC "${imgui_SOURCE_DIR}/*.cpp")
 
-    if (${IMGUI_BACKEND} STREQUAL "win32_directx10")
+    if (${IMGUI_BACKEND} STREQUAL "win32_directx9")
+        set(
+            IMGUI_BACKEND_SRC
+            "${imgui_SOURCE_DIR}/backends/imgui_impl_win32.cpp"
+            "${imgui_SOURCE_DIR}/backends/imgui_impl_dx9.cpp"
+        )
+        set(IMGUI_BACKEND_LIBS "d3d9.lib")
+    elseif (${IMGUI_BACKEND} STREQUAL "win32_directx10")
         set(
             IMGUI_BACKEND_SRC
             "${imgui_SOURCE_DIR}/backends/imgui_impl_win32.cpp"
@@ -82,6 +89,7 @@ if (NOT imgui_POPULATED)
 endif()
 
 if (${IMGUI_BACKEND} STREQUAL "win32_directx9")
+    add_subdirectory(w32dx9demo)
 elseif (${IMGUI_BACKEND} STREQUAL "win32_directx10")
     add_subdirectory(w32dx10demo)
 endif()
